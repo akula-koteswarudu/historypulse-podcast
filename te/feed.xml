@@ -1,37 +1,37 @@
-<?xml version='1.0' encoding='utf-8'?>
-<rss xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>HistoryPulse — The Uncut Story (Telugu)</title>
     <description>నిజమైన చారిత్రక మూలాల నుండి సంపూర్ణ కథనాలు.</description>
     <language>te</language>
-    <ns0:author>HistoryPulse</ns0:author>
-    <ns0:explicit>false</ns0:explicit>
-    <ns0:category text="History" />
-    <ns0:owner>
-      <ns0:email>koteswarudu.akula@gmail.com</ns0:email>
-    </ns0:owner>
-    <ns0:image href="https://drive.google.com/uc?export=download&amp;id=1p3SusKs0xkcHZUH2yaCeYofha1uv8Zk3" />
+    <itunes:author>HistoryPulse</itunes:author>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="History" />
+    <itunes:owner>
+      <itunes:email>koteswarudu.akula@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://drive.google.com/uc?export=download&amp;id=1p3SusKs0xkcHZUH2yaCeYofha1uv8Zk3" />
     <item>
-      <title>విజయనగర అధ్యాయం 2: రెండు సింహాసనాల మధ్య నది</title>
+      <title>అధ్యాయం 2: రెండు సింహాసనాల మధ్య నది</title>
       <description>హరిహరరాయ ద్వితీయుడి కాలంలో విజయనగరం సామ్రాజ్య రూపం దాల్చింది, కానీ అదే కాలం చివరికి రాయచూరు దోఆబ్ కోసం బహ్మనీ సుల్తాన్లతో నిరంతర యుద్ధ యుగం మొదలైంది. హత్యలు, ముట్టడులు, అవమానకర ఒప్పందాలు, బలవంతపు వివాహాలు, సైన్య సంస్కరణల మధ్య విజయనగరం ఒక కఠినమైన నిజం నేర్చుకుంది—దక్కన్‌లో బతకాలి అంటే ఎప్పుడూ యుద్ధానికి సిద్ధంగా ఉండాలి.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=1w86f6v0dkQlKjiaA0zkCK6ajkRaakMTm" type="audio/mpeg" length="11895554" />
       <guid isPermaLink="false">vijayanagara-empire-chapter-2-te</guid>
       <pubDate>Fri, 27 Mar 2026 13:03:20 +0000</pubDate>
-      <ns0:duration>1486</ns0:duration>
-      <ns0:season>1</ns0:season>
-      <ns0:episode>2</ns0:episode>
-      <ns0:image href="https://drive.google.com/uc?export=download&amp;id=1wqT3PJvsAZkuyBwbrbdlycTHSt8lCf4E" />
+      <itunes:duration>1486</itunes:duration>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>2</itunes:episode>
+      <itunes:image href="https://drive.google.com/uc?export=download&amp;id=1wqT3PJvsAZkuyBwbrbdlycTHSt8lCf4E" />
     </item>
     <item>
-      <title>విజయనగర అధ్యాయం ఒకటి: విధ్వంసం నుంచి విజయనగరం వరకు</title>
-      <description>ఈ ఎపిసోడ్‌లో పాత దక్షిణాది రాజ్యాల పతనం, వరంగల్-కమ్పిలి దురంతం, మహ్మద్ బిన్ తుగ్లక్ భీకర యాత్రలు ఎలా హరిహర, బుక్కలకు విజయనగర స్థాపనకు మార్గం చూపాయో చెబుతుంది. తుంగభద్ర తీరంలోని చిన్న సరిహద్దు ఆశ్రయం, పురాణం-పాలిటిక్స్-ఆధ్యాత్మికాధికారాల మేళవింపుతో త్వరగా దక్షిణ భారతదేశపు మహా హిందూ గోడగా మారింది. </description>
+      <title>అధ్యాయం 1: విధ్వంసం నుంచి విజయనగరం వరకు</title>
+      <description>ఈ ఎపిసోడ్‌లో పాత దక్షిణాది రాజ్యాల పతనం, వరంగల్-కమ్పిలి దురంతం, మహ్మద్ బిన్ తుగ్లక్ భీకర యాత్రలు ఎలా హరిహర, బుక్కలకు విజయనగర స్థాపనకు మార్గం చూపాయో చెబుతుంది.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=1I-CkLK0XhlVxuLxupFNllGDAIvI-TB6v" type="audio/mpeg" length="11390032" />
       <guid isPermaLink="false">vijayanagara-empire-chapter-1-te</guid>
       <pubDate>Fri, 27 Mar 2026 13:02:51 +0000</pubDate>
-      <ns0:duration>1423</ns0:duration>
-      <ns0:season>1</ns0:season>
-      <ns0:episode>1</ns0:episode>
-      <ns0:image href="https://drive.google.com/uc?export=download&amp;id=1p3SusKs0xkcHZUH2yaCeYofha1uv8Zk3" />
+      <itunes:duration>1423</itunes:duration>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>1</itunes:episode>
+      <itunes:image href="https://drive.google.com/uc?export=download&amp;id=1p3SusKs0xkcHZUH2yaCeYofha1uv8Zk3" />
     </item>
   </channel>
 </rss>
