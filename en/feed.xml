@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>HistoryPulse — The Uncut Story</title>
+    <description>Deep-dive uncut narrations from real historical sources.</description>
+    <language>en</language>
+    <ns0:author>HistoryPulse</ns0:author>
+    <ns0:explicit>false</ns0:explicit>
+    <ns0:category text="History" />
+    <item>
+      <title>Vijayanagara Chapter 2: The River Between Thrones</title>
+      <description>Harihara II inherited a frontier kingdom and made it imperial, but the peace of his reign gave way to an era in which Vijayanagara and the Bahmani sultans fought for the Raichur Doab with assassination, siege, tribute, marriage alliances, and massacre. By the time Deva Raya began recruiting Muslim archers and reshaping his army, the empire had learned the hardest lesson of the Deccan: survival would depend on permanent readiness for war.
+
+Based on "A Forgotten Empire (Vijayanagara)" by Robert Sewell (1900), available on Project Gutenberg.</description>
+      <enclosure url="https://drive.google.com/uc?export=download&amp;id=1Qq79WzbWtXikAgU8jL_MNq_fl4IpnTGx" type="audio/mpeg" length="11191920" />
+      <guid isPermaLink="false">vijayanagara-empire-chapter-2-en</guid>
+      <pubDate>Fri, 27 Mar 2026 13:03:20 +0000</pubDate>
+      <ns0:duration>1398</ns0:duration>
+      <ns0:season>1</ns0:season>
+      <ns0:episode>2</ns0:episode>
+      <ns0:image href="https://drive.google.com/uc?export=download&amp;id=1UJjR2R2N0BwBSqac6XTczY33KgUn19KX" />
+    </item>
+    <item>
+      <title>Vijayanagara Chapter 1: From Ruin to the City of Victory</title>
+      <description>This opening chapter traces how the collapse of the old southern kingdoms, the fall of Warangal and Kampli, and the brutal campaigns of Muhammad bin Tughlaq created the conditions for Harihara and Bukka to found Vijayanagar on the Tungabhadra. From a fragile frontier refuge backed by legend, strategy, and religious authority, the new state rapidly became the great Hindu bulwark of the south. </description>
+      <enclosure url="https://drive.google.com/uc?export=download&amp;id=1qSdfFgcf69oqnJdlVY8fqIVjKAjh3FVW" type="audio/mpeg" length="10204909" />
+      <guid isPermaLink="false">vijayanagara-empire-chapter-1-en</guid>
+      <pubDate>Fri, 27 Mar 2026 13:02:51 +0000</pubDate>
+      <ns0:duration>1275</ns0:duration>
+      <ns0:season>1</ns0:season>
+      <ns0:episode>1</ns0:episode>
+      <ns0:image href="https://drive.google.com/uc?export=download&amp;id=1k3nTnO8dx6Y3gk-xaK8XSZCNsuiLlu51" />
+    </item>
+  </channel>
+</rss>
