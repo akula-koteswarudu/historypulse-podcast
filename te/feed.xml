@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
     <title>HistoryPulse — The Uncut Story (Telugu)</title>
     <description>నిజమైన చారిత్రక మూలాల నుండి సంపూర్ణ కథనాలు.</description>
@@ -32,6 +32,7 @@
       <itunes:season>1</itunes:season>
       <itunes:episode>1</itunes:episode>
       <itunes:image href="https://drive.google.com/uc?export=download&amp;id=1q1VSmOtrqeJv20pYyxWnQfr_C58hOyIl" />
+      <podcast:transcript url="https://drive.google.com/uc?export=download&amp;id=1gS5agxzT4kAyWM2n5f05FQoerzEwxFLO" type="application/x-subrip" />
     </item>
   </channel>
 </rss>
