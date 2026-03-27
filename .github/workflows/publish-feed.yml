@@ -2,64 +2,97 @@ name: Publish podcast feed
 
 on:
   schedule:
-    # Runs every hour, checks if any draft is due
-    - cron: '0 * * * *'
-  workflow_dispatch:
-    inputs:
-      force:
-        description: 'Force publish now'
-        type: boolean
-        default: false
+    # 6 PM IST = 12:30 PM UTC
+    - cron: '30 12 * * *'
+  workflow_dispatch: # manual trigger
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Check for scheduled drafts
-        id: check
+      - name: Process draft episodes
         run: |
-          # Check if draft branch exists
-          if ! git ls-remote --heads origin draft | grep -q draft; then
-            echo "No draft branch found"
-            echo "has_draft=false" >> $GITHUB_OUTPUT
+          TODAY=$(date -u +%Y-%m-%d)
+          echo "Today: $TODAY"
+
+          # Find all draft files for today or earlier
+          FOUND=0
+          for draft in drafts/*.json; do
+            [ -f "$draft" ] || continue
+
+            # Extract date from filename: drafts/2026-03-29_slug-lang.json
+            BASENAME=$(basename "$draft" .json)
+            DRAFT_DATE=$(echo "$BASENAME" | grep -oP '^\d{4}-\d{2}-\d{2}')
+
+            if [ -z "$DRAFT_DATE" ]; then
+              echo "Skipping $draft (no date in filename)"
+              continue
+            fi
+
+            # Check if draft date is today or earlier
+            if [ "$DRAFT_DATE" \> "$TODAY" ]; then
+              echo "Skipping $draft (future: $DRAFT_DATE)"
+              continue
+            fi
+
+            echo "Processing: $draft (date: $DRAFT_DATE)"
+
+            # Read draft JSON and extract feed language (en or te)
+            LANG=$(python3 -c "import json; d=json.load(open('$draft')); print(d.get('lang','en'))")
+
+            # Insert the new <item> block into feed.xml right after <channel> opening tags
+            ITEM_XML=$(python3 -c "
+          import json
+          d = json.load(open('$draft'))
+          print(d.get('item_xml', ''))
+          ")
+
+            FEED="$LANG/feed.xml"
+            if [ -f "$FEED" ]; then
+              # Insert before the first <item> or before </channel>
+              python3 -c "
+          import json
+
+          draft = json.load(open('$draft'))
+          item_xml = draft.get('item_xml', '')
+          lang = draft.get('lang', 'en')
+          feed_path = f'{lang}/feed.xml'
+
+          with open(feed_path, 'r') as f:
+              content = f.read()
+
+          # Insert new item after the channel header (before first <item> or </channel>)
+          if '<item>' in content:
+              content = content.replace('<item>', item_xml + '\n    <item>', 1)
+          else:
+              content = content.replace('</channel>', item_xml + '\n  </channel>')
+
+          with open(feed_path, 'w') as f:
+              f.write(content)
+
+          print(f'Added episode to {feed_path}')
+          "
+            fi
+
+            # Delete processed draft
+            rm "$draft"
+            FOUND=$((FOUND + 1))
+          done
+
+          if [ "$FOUND" -eq 0 ]; then
+            echo "No drafts to process"
             exit 0
           fi
 
-          # Check publish time from draft metadata
-          git fetch origin draft
-          if git show origin/draft:publish_at.txt > /dev/null 2>&1; then
-            PUBLISH_AT=$(git show origin/draft:publish_at.txt)
-            NOW=$(date -u +%s)
-            TARGET=$(date -u -d "$PUBLISH_AT" +%s 2>/dev/null || date -u -j -f "%Y-%m-%dT%H:%M:%S" "$PUBLISH_AT" +%s 2>/dev/null || echo "0")
+          echo "Processed $FOUND draft(s)"
 
-            if [ "${{ github.event.inputs.force }}" = "true" ] || [ "$NOW" -ge "$TARGET" ]; then
-              echo "Time to publish! (target: $PUBLISH_AT)"
-              echo "has_draft=true" >> $GITHUB_OUTPUT
-            else
-              echo "Not yet (target: $PUBLISH_AT, now: $(date -u))"
-              echo "has_draft=false" >> $GITHUB_OUTPUT
-            fi
-          else
-            # No publish_at file = publish immediately
-            echo "has_draft=true" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Merge draft to main
-        if: steps.check.outputs.has_draft == 'true'
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git merge origin/draft --no-edit
-          # Remove the metadata file from main
-          git rm publish_at.txt 2>/dev/null || true
-          git commit -m "Remove publish metadata" --allow-empty 2>/dev/null || true
-          git push origin main
-
-      - name: Delete draft branch
-        if: steps.check.outputs.has_draft == 'true'
-        run: |
-          git push origin --delete draft 2>/dev/null || true
+          git add -A
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Publish scheduled podcast episodes [bot]"
+          git push
