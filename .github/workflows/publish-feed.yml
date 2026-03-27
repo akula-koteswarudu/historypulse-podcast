@@ -2,8 +2,8 @@ name: Publish podcast feed
 
 on:
   schedule:
-    # 6 PM IST = 12:30 PM UTC
-    - cron: '30 12 * * *'
+    # 6 AM IST = 12:30 AM UTC (publish early so Spotify polls before 6 PM)
+    - cron: '30 0 * * *'
   workflow_dispatch: # manual trigger
 
 jobs:
